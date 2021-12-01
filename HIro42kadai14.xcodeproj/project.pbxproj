@@ -16,6 +16,9 @@
 		3B31F57E27570D93001EF2CE /* HIro42kadai14Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B31F57D27570D93001EF2CE /* HIro42kadai14Tests.swift */; };
 		3B31F58827570D93001EF2CE /* HIro42kadai14UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B31F58727570D93001EF2CE /* HIro42kadai14UITests.swift */; };
 		3B31F58A27570D93001EF2CE /* HIro42kadai14UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B31F58927570D93001EF2CE /* HIro42kadai14UITestsLaunchTests.swift */; };
+		3B31F597275712DD001EF2CE /* AddFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B31F596275712DD001EF2CE /* AddFruitViewController.swift */; };
+		3B31F59C27572C3D001EF2CE /* FruistList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B31F59B27572C3D001EF2CE /* FruistList.swift */; };
+		3B31F59E27572E4E001EF2CE /* CheckItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B31F59D27572E4E001EF2CE /* CheckItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		3B31F58327570D93001EF2CE /* HIro42kadai14UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HIro42kadai14UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B31F58727570D93001EF2CE /* HIro42kadai14UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIro42kadai14UITests.swift; sourceTree = "<group>"; };
 		3B31F58927570D93001EF2CE /* HIro42kadai14UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIro42kadai14UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3B31F596275712DD001EF2CE /* AddFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewController.swift; sourceTree = "<group>"; };
+		3B31F59B27572C3D001EF2CE /* FruistList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruistList.swift; sourceTree = "<group>"; };
+		3B31F59D27572E4E001EF2CE /* CheckItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,10 @@
 		3B31F56527570D91001EF2CE /* HIro42kadai14 */ = {
 			isa = PBXGroup;
 			children = (
+				3B31F59A27572BFB001EF2CE /* Model */,
+				3B31F59827572BE1001EF2CE /* Controller */,
 				3B31F56627570D91001EF2CE /* AppDelegate.swift */,
 				3B31F56827570D91001EF2CE /* SceneDelegate.swift */,
-				3B31F56A27570D91001EF2CE /* ViewController.swift */,
 				3B31F56C27570D91001EF2CE /* Main.storyboard */,
 				3B31F56F27570D93001EF2CE /* Assets.xcassets */,
 				3B31F57127570D93001EF2CE /* LaunchScreen.storyboard */,
@@ -127,6 +134,24 @@
 			path = HIro42kadai14UITests;
 			sourceTree = "<group>";
 		};
+		3B31F59827572BE1001EF2CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B31F56A27570D91001EF2CE /* ViewController.swift */,
+				3B31F596275712DD001EF2CE /* AddFruitViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B31F59A27572BFB001EF2CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B31F59B27572C3D001EF2CE /* FruistList.swift */,
+				3B31F59D27572E4E001EF2CE /* CheckItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +162,7 @@
 				3B31F55F27570D91001EF2CE /* Sources */,
 				3B31F56027570D91001EF2CE /* Frameworks */,
 				3B31F56127570D91001EF2CE /* Resources */,
+				3B31F59F27573144001EF2CE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,12 +279,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B31F59F27573144001EF2CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B31F55F27570D91001EF2CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B31F597275712DD001EF2CE /* AddFruitViewController.swift in Sources */,
+				3B31F59E27572E4E001EF2CE /* CheckItem.swift in Sources */,
 				3B31F56B27570D91001EF2CE /* ViewController.swift in Sources */,
+				3B31F59C27572C3D001EF2CE /* FruistList.swift in Sources */,
 				3B31F56727570D91001EF2CE /* AppDelegate.swift in Sources */,
 				3B31F56927570D91001EF2CE /* SceneDelegate.swift in Sources */,
 			);

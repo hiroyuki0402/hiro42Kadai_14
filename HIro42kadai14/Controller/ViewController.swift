@@ -10,18 +10,18 @@ class ViewController: UIViewController, GetFruitDelegate {
     private var fruitsInStock = FruistList().fruitsInStock
 
     func getFruit(checkItem: CheckItem) {
-        fruitsInStock.append(CheckItem.init(name: checkItem.name, isChecked: checkItem.isChecked))
+        fruitsInStock.append(CheckItem(name: checkItem.name, isChecked: checkItem.isChecked))
         tableView.reloadData()
     }
 
-    @IBAction func addButton(_ sender: Any) {
+    @IBAction private func addButton(_ sender: Any) {
         performSegue(withIdentifier: "Homesegue", sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Homesegue" {
-            guard let AddFruitVC = segue.destination as? AddFruitViewController else { return }
-            AddFruitVC.delegate = self
+            guard let addFruitVC = segue.destination as? AddFruitViewController else { return }
+            addFruitVC.delegate = self
         }
     }
 }
@@ -48,4 +48,3 @@ class FruitCell: UITableViewCell {
         checkImgaeView.image = item.isChecked ? UIImage(named: "checkMark") : nil
     }
 }
-
