@@ -8,7 +8,8 @@
 import UIKit
 
 protocol AddFruitViewControllerDelegate: AnyObject {
-    func getFruit(checkItem: CheckItem)
+    func didSave(checkItem: CheckItem)
+    func didCancel()
 }
 
 class AddFruitViewController: UIViewController {
@@ -18,6 +19,10 @@ class AddFruitViewController: UIViewController {
 
     @IBAction private func executeSaveButton(_ sender: Any) {
         guard let text = enterFruitTextField.text, !text.isEmpty else { return }
-        delegate?.getFruit(checkItem: .init(name: text, isChecked: false))
+        delegate?.didSave(checkItem: .init(name: text, isChecked: false))
+    }
+
+    @IBAction func executeCancelButton(_ sender: Any) {
+        delegate?.didCancel()
     }
 }

@@ -14,10 +14,14 @@ class ViewController: UIViewController, AddFruitViewControllerDelegate {
         tableView.allowsSelection = false
     }
 
-    func getFruit(checkItem: CheckItem) {
+    func didSave(checkItem: CheckItem) {
         dismiss(animated: true, completion: nil)
         fruitsInStock.append(checkItem)
         tableView.reloadData()
+    }
+
+    func didCancel() {
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction private func addButton(_ sender: Any) {
