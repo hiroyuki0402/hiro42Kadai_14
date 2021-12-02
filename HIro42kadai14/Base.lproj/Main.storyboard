@@ -21,20 +21,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="wHO-S5-3va" customClass="FruitCell" customModule="HIro42kadai14" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="71"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="70.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wHO-S5-3va" id="4sn-mf-YPM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jAN-Eh-YH0">
-                                                    <rect key="frame" x="10" y="10" width="50" height="51"/>
+                                                    <rect key="frame" x="10" y="10.000000000000004" width="50" height="50.333333333333343"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="fRq-sU-clf"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zc5-9q-LdS">
-                                                    <rect key="frame" x="68" y="22" width="42" height="21.666666666666671"/>
+                                                    <rect key="frame" x="68" y="22" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aal-3k-3Ka">
                             <connections>
                                 <action selector="addButton:" destination="BYZ-38-t0r" id="GQh-d0-SKa"/>
-                                <segue destination="u9j-xw-eak" kind="show" identifier="Homesegue" id="RLE-qP-v7u"/>
+                                <segue destination="guT-84-9eR" kind="show" identifier="Homesegue" id="vIh-hh-dbb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -126,6 +126,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GqN-TH-STg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VQ0-MU-9Ci">
+                            <connections>
+                                <action selector="executeCancelButton:" destination="u9j-xw-eak" id="mwT-8d-HUA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="cVb-44-XZq">
                             <connections>
                                 <action selector="executeSaveButton:" destination="u9j-xw-eak" id="XP8-cH-Lj7"/>
@@ -138,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gl-qV-cDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728.985507246377" y="49.553571428571423"/>
+            <point key="canvasLocation" x="2639.130434782609" y="49.553571428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qhg-qR-U7I">
@@ -157,6 +162,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juo-vq-4GQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="49.553571428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BZS-Km-faD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="guT-84-9eR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cG3-eh-VcM"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Tn-jO-dhe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u9j-xw-eak" kind="relationship" relationship="rootViewController" id="8kS-hT-7jt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oeu-GD-zde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728.985507246377" y="49.553571428571423"/>
         </scene>
     </scenes>
     <resources>

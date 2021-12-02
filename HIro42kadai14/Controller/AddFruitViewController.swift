@@ -7,16 +7,22 @@
 
 import UIKit
 
-protocol GetFruitDelegate: AnyObject {
-    func getFruit(checkItem: CheckItem)
+protocol AddFruitViewControllerDelegate: AnyObject {
+    func didSave(checkItem: CheckItem)
+    func didCancel()
 }
 
 class AddFruitViewController: UIViewController {
     @IBOutlet private weak var enterFruitTextField: UITextField!
-    weak var delegate: GetFruitDelegate?
+
+    weak var delegate: AddFruitViewControllerDelegate?
+
     @IBAction private func executeSaveButton(_ sender: Any) {
-        guard let text = enterFruitTextField.text else { return }
-        delegate?.getFruit(checkItem: .init(name: text, isChecked: false))
-        navigationController?.popViewController(animated: true)
+        guard let text = enterFruitTextField.text, !text.isEmpty else { return }
+        delegate?.didSave(checkItem: .init(name: text, isChecked: false))
+    }
+
+    @IBAction func executeCancelButton(_ sender: Any) {
+        delegate?.didCancel()
     }
 }
